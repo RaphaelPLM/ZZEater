@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "572582409204",
+    "firebase_url": "https://zzeater-19a7b.firebaseio.com",
+    "project_id": "zzeater-19a7b",
+    "storage_bucket": "zzeater-19a7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572582409204:android:65a1c0f6d74e515a22ffa1",
+        "android_client_info": {
+          "package_name": "com.zzeater.zzeater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572582409204-727q3cr09bubm6hpsnsud66l80vb4f9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW4Yh4Jtoc3dICqpgarPZ4mNeVTmiqNzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572582409204-727q3cr09bubm6hpsnsud66l80vb4f9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
