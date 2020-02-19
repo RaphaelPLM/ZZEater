@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zzeater/services/auth.dart';
-import 'package:zzeater/services/style/style.dart';
+import 'package:zzeater/style/style.dart';
 
 class Register extends StatefulWidget {
   @override
