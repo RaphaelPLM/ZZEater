@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:zzeater/models/user.dart';
+import 'package:zzeater/services/database.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -24,8 +25,13 @@ class AuthService {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
+      
       FirebaseUser user = result.user;
 
+      // Register the new user's data into the users collection
+      await DatabaseService(uid: user.uid).updateUserData(firstName, lastName);
+
+      // Return the created user
       return _userFromFirebaseUser(user, email, firstName, lastName);
     } catch (e) {
       print(e.toString());
