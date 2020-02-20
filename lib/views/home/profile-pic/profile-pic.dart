@@ -5,6 +5,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:zzeater/services/uploader.dart';
 
 class ProfilePic extends StatefulWidget {
+  final String profilePicUrl;
+  const ProfilePic(this.profilePicUrl);
+
   @override
   _ProfilePicState createState() => _ProfilePicState();
 }
@@ -23,7 +26,9 @@ class _ProfilePicState extends State<ProfilePic> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(children: <Widget>[
+        child: Column(children: <Widget>[
+      SizedBox(height: 30.0),
+      Row(children: <Widget>[
         IconButton(
           icon: Icon(Icons.photo_camera),
           onPressed: () => _pickImage(ImageSource.camera),
@@ -32,8 +37,25 @@ class _ProfilePicState extends State<ProfilePic> {
           icon: Icon(Icons.photo_library),
           onPressed: () => _pickImage(ImageSource.gallery),
         ),
-        Uploader(file: _imageFile)
+        Uploader(file: _imageFile),
       ]),
-    );
+      Column(
+        children: <Widget>[
+          InkWell(
+            onTap: () {
+              print("oi");
+            },
+            child: Container(
+                width: 100.0,
+                height: 100.0,
+                decoration: new BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: new DecorationImage(
+                        fit: BoxFit.fill,
+                        image: new NetworkImage(widget.profilePicUrl)))),
+          )
+        ],
+      )
+    ]));
   }
 }

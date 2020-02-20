@@ -15,15 +15,19 @@ class DatabaseService {
       Firestore.instance.collection('users');
 
   // Set user personal data (first and last names)
-  Future updateUserData(String firstName, String lastName) async {
+  Future updateUserData(String firstName, String lastName, String url) async {
     return await usersCollection
         .document(uid)
-        .setData({'firstName': firstName, 'lastName': lastName});
+        .setData({'firstName': firstName, 'lastName': lastName, 'url': url});
   }
 
   // Adds a profile pic to an existing user
   Future updateUserProfilePic(String url) async  {
     return await usersCollection.document(uid).updateData({'url': url});
+  }
+
+  Future getUserData() async {
+    return await usersCollection.document(uid).get();
   }
 
   // Get users stream
